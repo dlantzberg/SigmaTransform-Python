@@ -11,7 +11,7 @@ This repository shows an exemplary implementation of the "SigmaTransform", as de
 
 Note that this library is not intended to show maximal performance, but show the usability of the universal interface of the "Sigma Transform" to perform well-known signal processing transforms / algorithms like the Short-Time Fourier Transform and Wavelet Transform.
 
-Currently, only the one-dimensional SigmaTransform is implemented
+Currently, only the one-dimensional SigmaTransform is implemented and utilizes NumPy and Matplotlib.
 
 # Usage and Examples
 Clone this repository, or copy the file "sigmatransform.py" to a local folder.
