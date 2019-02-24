@@ -24,9 +24,10 @@ import sigmatransform as st
 sig = lambda x : x;
 # get an instance
 STFT = st.SigmaTransform( 
-    sig ,   # the diffeomorphism handle 
-    win ,   # the window handle
-    Fs  ,   # the sampling Frequency
+    sig   , # the diffeomorphism handle 
+    win   , # the window handle
+    len(f), # the signal length
+    Fs    , # the sampling Frequency
     chan    # the channels in warped Fourier domain
 );
 # analyze the signal "f", given as numpy array ...
@@ -43,9 +44,10 @@ import sigmatransform as st
 sig = lambda x : np.log2(x*(x>0));
 # get an instance
 Wavelet = st.SigmaTransform( 
-    sig ,   # the diffeomorphism handle 
-    win ,   # the window handle
-    Fs  ,   # the sampling Frequency
+    sig   , # the diffeomorphism handle 
+    win   , # the window handle
+    len(f), # the signal length
+    Fs    , # the sampling Frequency
     chan    # the channels in warped Fourier domain
 );
 # analyze the signal "f", given as numpy array ...

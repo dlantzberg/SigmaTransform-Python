@@ -31,6 +31,7 @@ Wavelet = st.SigmaTransform(
     sig ,   # the diffeomorphism handle 
     win ,   # the window handle
     Fs  ,   # the sampling Frequency
+    len(f), # the length of the signal
     chan    # the channels in warped Fourier domain
 );
 
@@ -56,6 +57,7 @@ recMasked = st.SigmaTransform(
     lambda x : np.log2( x * (x>0.0) ),
     lambda x : np.exp(-np.pi*( x / sig(Fs) * 400.0 / 4.0 )**2 ),
     143000, 
+    400,
     np.linspace( np.log2(Fs*0.005) , np.log2(Fs/2.0*1.1) , 400 )
 ).multiplier(
     np.loadtxt("bat.asc"),

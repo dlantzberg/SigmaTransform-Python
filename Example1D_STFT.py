@@ -28,6 +28,7 @@ STFT = st.SigmaTransform(
     sig ,   # the diffeomorphism handle 
     win ,   # the window handle
     Fs  ,   # the sampling Frequency
+    len(f), # the signal length
     chan    # the channels in warped Fourier domain
 );
 
@@ -53,6 +54,7 @@ recMasked = st.SigmaTransform(
     lambda x : x,
     lambda x : np.exp(-np.pi*(x/Fs*400.0/16.0)**2),
     143000, 
+    400,
     np.linspace(-Fs/2.0,Fs/2.0,400)
 ).multiplier(
     np.loadtxt("bat.asc"),
